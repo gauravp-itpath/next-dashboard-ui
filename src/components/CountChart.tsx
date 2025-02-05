@@ -1,4 +1,5 @@
 "use client";
+import { countData } from "@/lib/utils";
 import Image from "next/image";
 import {
   RadialBarChart,
@@ -7,24 +8,6 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-const data = [
-  {
-    name: "total",
-    count: 100,
-    fill: "white",
-  },
-  {
-    name: "Girls",
-    count: 45,
-    fill: "#FAE47C",
-  },
-  {
-    name: "Boys",
-    count: 55,
-    fill: "#C4EAFB",
-  },
-];
-
 const style = {
   top: "50%",
   right: 0,
@@ -32,7 +15,7 @@ const style = {
   lineHeight: "24px",
 };
 
-const CounterChart = () => {
+const CountChart = () => {
   return (
     <div className="bg-white rounded-xl w:full h-full p-4">
       <div className="flex justify-between flex-wrap">
@@ -47,7 +30,7 @@ const CounterChart = () => {
             innerRadius="40%"
             outerRadius="100%"
             barSize={32}
-            data={data}
+            data={countData}
           >
             <RadialBar background dataKey="count" />
           </RadialBarChart>
@@ -76,4 +59,4 @@ const CounterChart = () => {
   );
 };
 
-export default CounterChart;
+export default CountChart;
